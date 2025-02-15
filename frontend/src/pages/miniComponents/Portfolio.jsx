@@ -12,7 +12,7 @@ const Portfolio = () => {
   const getMyProjects = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/project/getall",
+        "https://portfolio-backend-gw7d.onrender.com/api/v1/project/getall",
         { withCredentials: true }
       );
       setProjects(data.projects);
@@ -45,7 +45,11 @@ const Portfolio = () => {
         animate="visible"
         variants={{
           hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+          },
         }}
       >
         {projects &&
@@ -77,7 +81,9 @@ const Portfolio = () => {
                     group-hover:opacity-100 transition-opacity duration-500 flex 
                     flex-col justify-center items-center text-white p-4"
                   >
-                    <p className="text-sm text-gray-200">{project.description}</p>
+                    <p className="text-sm text-gray-200">
+                      {project.description}
+                    </p>
                   </motion.div>
                 </motion.div>
               </Link>

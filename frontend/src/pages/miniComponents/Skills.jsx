@@ -9,7 +9,7 @@ const Skills = () => {
   const getMySkills = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/skill/getall",
+        "https://portfolio-backend-gw7d.onrender.com/api/v1/skill/getall",
         { withCredentials: true }
       );
       setSkills(data.skills);
@@ -42,7 +42,11 @@ const Skills = () => {
         animate="visible"
         variants={{
           hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+          },
         }}
       >
         {skills.map((skill, index) => (

@@ -9,7 +9,7 @@ const Timeline = () => {
     const getMyTimeline = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/timeline/getall",
+          "https://portfolio-backend-gw7d.onrender.com/api/v1/timeline/getall",
           { withCredentials: true }
         );
         setTimeline(data.timelines.reverse());

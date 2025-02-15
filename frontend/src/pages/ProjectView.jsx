@@ -10,15 +10,11 @@ const ProjectView = () => {
   const { id } = useParams();
   // const navigate = useNavigate();
 
- 
-  
-  
-
   useEffect(() => {
     const getProject = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:4000/api/v1/project/get/${id}`,
+          `https://portfolio-backend-gw7d.onrender.com/api/v1/project/get/${id}`,
           { withCredentials: true }
         );
         setProject(data.project);
@@ -45,12 +41,14 @@ const ProjectView = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {/* 🔥 Hero Section */}
-      <div className="absolute inset-0 bg-cover bg-center filter blur-[100px] opacity-30" 
-        style={{ backgroundImage: `url(${project.projectBanner?.url || "/avatarHolder.jpg"})` }} 
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-[100px] opacity-30"
+        style={{
+          backgroundImage: `url(${
+            project.projectBanner?.url || "/avatarHolder.jpg"
+          })`,
+        }}
       />
-
-    
-
 
       {/* Project Card */}
       <motion.div

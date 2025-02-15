@@ -10,7 +10,7 @@ const MyApps = () => {
     const getMyApps = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/softwareapplication/getall",
+          "https://portfolio-backend-gw7d.onrender.com/api/v1/softwareapplication/getall",
           { withCredentials: true }
         );
         setApps(data.softwareApplications);
@@ -24,7 +24,7 @@ const MyApps = () => {
   return (
     <div className="w-full flex flex-col gap-8 sm:gap-12">
       {/* Title */}
-      <motion.h1 
+      <motion.h1
         className="text-tubeLight-effect text-[2rem] sm:text-[2.75rem] md:text-[3rem] lg:text-[3.8rem] 
         tracking-[15px] dancing_text mx-auto w-fit"
         initial={{ opacity: 0, y: -20 }}
@@ -35,7 +35,7 @@ const MyApps = () => {
       </motion.h1>
 
       {/* Grid Container */}
-      <motion.div 
+      <motion.div
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
         initial="hidden"
         animate="visible"
@@ -44,8 +44,8 @@ const MyApps = () => {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { staggerChildren: 0.15, ease: "easeOut" }
-          }
+            transition: { staggerChildren: 0.15, ease: "easeOut" },
+          },
         }}
       >
         {apps.map((app) => (
@@ -54,10 +54,11 @@ const MyApps = () => {
             whileHover={{ scale: 1.05, rotate: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           >
-            <Card className="h-fit p-7 flex flex-col justify-center items-center gap-3 
+            <Card
+              className="h-fit p-7 flex flex-col justify-center items-center gap-3 
               bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-xl 
-              hover:shadow-xl transition-all duration-300 dark:bg-gray-800/50">
-              
+              hover:shadow-xl transition-all duration-300 dark:bg-gray-800/50"
+            >
               {/* Image */}
               <motion.img
                 src={app.svg?.url || "/placeholder.svg"}

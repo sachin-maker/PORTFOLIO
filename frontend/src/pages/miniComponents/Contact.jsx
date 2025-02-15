@@ -16,7 +16,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/message/send",
+        "https://portfolio-backend-gw7d.onrender.com/api/v1/message/send",
         { senderName, subject, message },
         {
           withCredentials: true,
@@ -37,13 +37,11 @@ const Contact = () => {
     <div className="overflow-x-hidden">
       {/* Section Title */}
       <div className="relative flex flex-col items-center mb-8">
-  <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3rem] font-extrabold tracking-wide dark:text-white text-gray-900 relative">
-    CONTACT <span className="text-blue-600 dark:text-blue-400">ME</span>
-    <span className="block w-full h-[2px] bg-gray-300 dark:bg-gray-600 mt-2"></span>
-  </h1>
-</div>
-
-
+        <h1 className="text-[2rem] sm:text-[2.75rem] md:text-[3rem] font-extrabold tracking-wide dark:text-white text-gray-900 relative">
+          CONTACT <span className="text-blue-600 dark:text-blue-400">ME</span>
+          <span className="block w-full h-[2px] bg-gray-300 dark:bg-gray-600 mt-2"></span>
+        </h1>
+      </div>
 
       {/* Contact Form */}
       <form
